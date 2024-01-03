@@ -1,0 +1,23 @@
+<launch>
+    <param name="acc_noise"       type="double" value="1.4885e-02" />
+    <param name="gyro_noise"      type="double" value="5.5192e-04" />
+    <param name="acc_bias_noise"  type="double" value="1.9736e-06" />
+    <param name="gyro_bias_noise" type="double" value="1.5769e-07" />
+    
+
+    <param name="I_p_Gps_x"       type="double" value="0.0" />
+    <param name="I_p_Gps_y"       type="double" value="0.0" />
+    <param name="I_p_Gps_z"       type="double" value="0.0" />
+
+    <param name="log_folder"      type="string" value="$(find imu_gps_localization)/Log" />
+
+    <!-- <node name="nmea_topic_driver" pkg="nmea_navsat_driver" type="nmea_topic_driver" output="screen" /> -->
+    <node name="imu_gps_localization_node" pkg="imu_gps_localization" type="imu_gps_localization_node" output="screen">
+      <remap from="/odometry" to="/dji_locate_msg"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+      args="-d $(find imu_gps_localization)/ros_wrapper/rviz/default.rviz" required="true">
+    </node>
+
+</launch>

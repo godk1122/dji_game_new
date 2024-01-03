@@ -1,0 +1,4 @@
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/lib/libplan_env.so
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/lib/pkgconfig/plan_env.pc
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/share/plan_env/cmake/plan_envConfig-version.cmake
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/share/plan_env/cmake/plan_envConfig.cmake

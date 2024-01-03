@@ -1,0 +1,14 @@
+<launch>
+    <!-- <arg name="traj_id" default="0"/> -->
+    
+    <!-- <include file="$(find px4_sim)/launch/sim.launch" /> -->
+
+    <node pkg="uav_control" name="track_mpc" type="tracking_kf.py" output="screen">
+        <remap from="~odom" to="/dji_locate_msg" />
+        <remap from="~track_traj" to="/dji_uav/trajectory" />
+        <remap from="~angle_rate_throttle_frame" to="/airsim_node/drone_1/angle_rate_throttle_frame" />
+    </node>
+    
+    <!-- <node pkg="uav_control" name="test_traj_pub" type="test_traj_pub.py" output="screen" /> -->
+    <!-- <include file="$(find ius_visualization)/launch/test.launch" /> -->
+</launch>

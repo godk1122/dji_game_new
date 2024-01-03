@@ -1,0 +1,7 @@
+<launch>
+  <node name="dji_visualization" pkg="visualization" type="visualization_node"/>
+  <node name="rviz_dji" pkg="rviz" type="rviz" args="-d $(find visualization)/config.rviz"/>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher" args="0 0 0 0 0 0 world map"/>
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher2" args="0 0 0 0 0 0 world camera_init"/>
+</launch>

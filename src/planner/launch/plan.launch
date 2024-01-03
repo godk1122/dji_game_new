@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="planner" name = "planner" type= "planner_node" output="screen">
+        <remap from="~trajectory" to="/dji_uav/trajectory"/>
+    </node>
+</launch>

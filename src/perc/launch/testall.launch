@@ -1,0 +1,22 @@
+<launch>
+    <node pkg="perc" name="dji_perc" type="perc_node" output="screen"/>
+ 
+    <node name="dji_visualization" pkg="visualization" type="visualization_node" output="screen">
+        <!-- 无人机姿态信息(定位信息），需要修改消息类型 -->
+        <remap from="/dji_uav/fly" to="/airsim_node/drone_1/debug/pose_gt"/>
+    </node>
+    <node name="rviz_dji" pkg="rviz" type="rviz" args="-d $(find visualization)/config.rviz"/>
+
+    <node pkg="planner" name = "planner_new" type= "planner_new_node" output="screen">
+        <remap from="~trajectory" to="/dji_uav/trajectory"/>
+    </node>
+    
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher" args="0 0 0 0 0 0 world map"/>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher2" args="0 0 0 0 0 0 world camera_init"/>
+    <!-- 
+    <node pkg="rviz" type="rviz" name="rviz" output="screen" 
+        args="-d $(find imu_gps_localization)/ros_wrapper/rviz/default.rviz" required="true">
+    </node>
+     -->
+    
+</launch>

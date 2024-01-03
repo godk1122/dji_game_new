@@ -1,0 +1,4 @@
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/lib/libbspline_opt.so
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/lib/pkgconfig/bspline_opt.pc
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/share/bspline_opt/cmake/bspline_optConfig-version.cmake
+Symlinking /data/fyy2/dji_game_ws/src/ego-planner/devel/share/bspline_opt/cmake/bspline_optConfig.cmake

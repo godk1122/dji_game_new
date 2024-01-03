@@ -1,0 +1,11 @@
+[01m[K/data/fyy2/dji_game_ws/src/ego-planner/src/planner/plan_env/src/grid_map.cpp:[m[K In member function ‘[01m[Kvoid GridMap::raycastProcess()[m[K’:
+[01m[K/data/fyy2/dji_game_ws/src/ego-planner/src/planner/plan_env/src/grid_map.cpp:343:7:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kvox_idx[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  343 |   int [01;35m[Kvox_idx[m[K;
+      |       [01;35m[K^~~~~~~[m[K
+[01m[K/data/fyy2/dji_game_ws/src/ego-planner/src/planner/plan_env/src/grid_map.cpp:356:19:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Khalf[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+  356 |   Eigen::Vector3d [01;35m[Khalf[m[K = Eigen::Vector3d(0.5, 0.5, 0.5);
+      |                   [01;35m[K^~~~[m[K
+[01m[K/data/fyy2/dji_game_ws/src/ego-planner/src/planner/plan_env/src/grid_map.cpp:[m[K In member function ‘[01m[Kvoid GridMap::cloudOdomCallback(const PointCloud2ConstPtr&, const OdometryConstPtr&)[m[K’:
+[01m[K/data/fyy2/dji_game_ws/src/ego-planner/src/planner/plan_env/src/grid_map.cpp:1042:21:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<pcl::PointXYZ, Eigen::aligned_allocator<pcl::PointXYZ> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+ 1042 |   for (int i = 0; [01;35m[Ki < cloud.points.size()[m[K; ++i)
+      |                   [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~[m[K

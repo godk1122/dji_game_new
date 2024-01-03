@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher_map_world" args="0 0 0 0 0 0 map world " />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher_airsim_world" args="0 0 0 0 0 3.14159265  world airsim_world" />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher_quadcopter_to_camera_l" args="0.26 -0.0475 0 1.5707963267948966 0 1.5707963267948966 quadcopter left_camera" />
+	<node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_publisher_quadcopter_to_camera_r" args="0.26 0.0475 0  1.5707963267948966 0 1.5707963267948966 quadcopter right_camera" />
+	<node pkg="tf_publisher" type="tf_publisher.py" name="airsim_tf_publisher" output="screen">
+		<!-- <remap from="pose" to="/airsim_node/drone_1/debug/fake_pose" /> -->
+		<remap from="pose" to="/airsim_node/drone_1/debug/pose_gt" />
+	</node>
+
+	<node pkg="tf_publisher" type="fake_localizer.py" name="fake_localizer" output="screen">
+		<remap from="imu" to="/airsim_node/drone_1/imu/imu" />
+		<remap from="gt" to="/airsim_node/drone_1/debug/pose_gt" />
+		<remap from="fake_localization" to="/airsim_node/drone_1/debug/fake_pose" />
+	</node>
+</launch>
